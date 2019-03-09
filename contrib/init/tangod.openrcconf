@@ -1,0 +1,26 @@
+# /etc/conf.d/tangod: config file for /etc/init.d/tangod
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/tango/tango.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/tangod"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/tangod.pid"
+
+# Where to write tangod data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/tangod"
+
+# User and group to own tangod process
+#BITCOIND_USER="tango"
+#BITCOIND_GROUP="tango"
+
+# Path to tangod executable
+#BITCOIND_BIN="/usr/bin/tangod"
+
+# Nice value to run tangod under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

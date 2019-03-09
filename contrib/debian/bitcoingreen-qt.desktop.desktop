@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tango
+Comment=Tango P2P Cryptocurrency
+Exec=tango-qt %u
+Terminal=false
+Type=Application
+Icon=tango128
+MimeType=x-scheme-handler/tango;
+Categories=Office;Finance;
+Name[en_US]=tango-qt.desktop

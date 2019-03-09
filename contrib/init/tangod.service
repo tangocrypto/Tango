@@ -1,0 +1,26 @@
+[Unit]
+Description=Tango's distributed currency daemon
+After=network.target
+
+[Service]
+User=tango
+Group=tango
+
+Type=forking
+PIDFile=/var/lib/tangod/tangod.pid
+
+ExecStart=/usr/bin/tangod -daemon -pid=/var/lib/tangod/tangod.pid \
+          -conf=/etc/tango/tango.conf -datadir=/var/lib/tangod
+
+ExecStop=-/usr/bin/tango-cli -conf=/etc/tango/tango.conf \
+         -datadir=/var/lib/tangod stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
