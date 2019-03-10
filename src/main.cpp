@@ -1624,12 +1624,12 @@ int64_t GetBlockValue(int nHeight)
     }
 
     if (nHeight < Params().LAST_POW_BLOCK())
-        nSubsidy = 10000 * COIN;
-    else if (nHeight <= 30000)
+        nSubsidy = 25000 * COIN;
+    else if (nHeight <= 50000)
+        nSubsidy = 10 * COIN;
+    else if (nHeight > 50000 && nHeight <= 100000)
         nSubsidy = 5 * COIN;
-    else if (nHeight > 30000 && nHeight <= 200000)
-        nSubsidy = 3.75 * COIN;
-    else if (nHeight > 200000 && nHeight <= 500000)
+    else if (nHeight > 100000 && nHeight <= 500000)
         nSubsidy = 2.5 * COIN;
     else if (nHeight > 500000 && nHeight <= 900000)
         nSubsidy = 1.25 * COIN;
@@ -1661,7 +1661,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         return 0;
 
     // Check if we reached coin supply
-    ret = blockValue * 0.85; // 85% of block reward
+    ret = blockValue * 0.8; // 80% of block reward
 
     return ret;
 }
@@ -1837,7 +1837,7 @@ bool CheckInputs(const CTransaction& tx, CValidationState& state, const CCoinsVi
 {
     
 	CBlockIndex* pindexPrev = mapBlockIndex.find(inputs.GetBestBlock())->second;
-	if (!tx.IsCoinBase() && pindexPrev->nHeight >= 270000) {
+	if (!tx.IsCoinBase() && pindexPrev->nHeight) {
         if (pvChecks)
             pvChecks->reserve(tx.vin.size());
 
@@ -1873,18 +1873,18 @@ bool CheckInputs(const CTransaction& tx, CValidationState& state, const CCoinsVi
         }
 
         if (!tx.IsCoinStake()) {
-             if (nValueIn < tx.GetValueOut() && pindexPrev->nHeight >= 270000)
+             if (nValueIn < tx.GetValueOut() && pindexPrev->nHeight)
                 return state.DoS(100, error("CheckInputs() : %s value in (%s) < value out (%s)",
                                           tx.GetHash().ToString(), FormatMoney(nValueIn), FormatMoney(tx.GetValueOut())),
                      REJECT_INVALID, "bad-txns-in-belowout");
 
              
             CAmount nTxFee = nValueIn - tx.GetValueOut();
-            if (nTxFee < 0 && pindexPrev->nHeight >= 270000)
+            if (nTxFee < 0 && pindexPrev->nHeight)
                 return state.DoS(100, error("CheckInputs() : %s nTxFee < 0", tx.GetHash().ToString()),
                     REJECT_INVALID, "bad-txns-fee-negative");
             nFees += nTxFee;
-            if (!MoneyRange(nFees) && pindexPrev->nHeight >= 270000)
+            if (!MoneyRange(nFees) && pindexPrev->nHeight)
                 return state.DoS(100, error("CheckInputs() : nFees out of range"),
                     REJECT_INVALID, "bad-txns-fee-outofrange");
         }
