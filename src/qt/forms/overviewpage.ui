@@ -817,7 +817,7 @@
                           </font>
                          </property>
                          <property name="text">
-                          <string notr="true">&lt;a href=&quot;coldskool@tangocoin.co&quot;&gt;oldskool@tangocoin.co&lt;/a&gt;</string>
+                          <string notr="true">&lt;a href=&quot;oldskool@tangocoin.co&quot;&gt;oldskool@tangocoin.co&lt;/a&gt;</string>
                          </property>
                          <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
