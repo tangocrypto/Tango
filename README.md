@@ -10,8 +10,8 @@
 #### Algorithm: - *Quark-hash* 
 #### Masternode collateral - *10,000 TNGO*  
 #### Features: - *SwiftTX, budget, treausury and masternode governance is enabled* 
-#### RPC Port: - *9501* 
-#### P2P Port: - *9500* 
+#### RPC Port: - *8485* 
+#### P2P Port: - *8484* 
 
 #
 

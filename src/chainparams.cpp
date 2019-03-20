@@ -42,12 +42,12 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x00000f99aa684223d645b73b2a6ff4eba24c7ea55de54711525af2c886ed1bfd"));
+    (0, uint256("0x0000096996809eb53677504436a9ff060798c13e2b00229fb2a456c57c17c140"));
 	
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1552247606, // * UNIX timestamp of last checkpoint block
+    1553091816, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -77,12 +77,12 @@ public:
     {
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
-        pchMessageStart[0] = 0x32;
-        pchMessageStart[1] = 0xcb;
+        pchMessageStart[0] = 0x33;
+        pchMessageStart[1] = 0xcc;
         pchMessageStart[2] = 0x13;
         pchMessageStart[3] = 0xcb;
         vAlertPubKey = ParseHex("04f5a8143f86ad8ac63791fbbdb8e0b91a8da88c8c693a95f6c2c13c063ea790f7960b8025a9047a7bc671d5cfe707a2dd2e13b86182e1064a0eea7bf863636363");
-        nDefaultPort = 9500;
+        nDefaultPort = 8484;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nSubsidyHalvingInterval = 1050000;
         nMaxReorganizationDepth = 100;
@@ -95,7 +95,7 @@ public:
         nMaturity = 5; // 6 block maturity (+1 elsewhere)
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 100000000 * COIN; // 100 million max supply
-        nLastPOWBlock = 200;
+        nLastPOWBlock = 100;
         nModifierUpdateBlock = 1; // we use the version 2 for TNGO
 
         const char* pszTimestamp = "TangoCoin is live! Do you tango?";
@@ -109,12 +109,12 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1552247606;
+        genesis.nTime = 1553091816;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21825904;
+        genesis.nNonce = 22616203;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000f99aa684223d645b73b2a6ff4eba24c7ea55de54711525af2c886ed1bfd"));
+        assert(hashGenesisBlock == uint256("0x0000096996809eb53677504436a9ff060798c13e2b00229fb2a456c57c17c140"));
         assert(genesis.hashMerkleRoot == uint256("0xab180e71d6aef8abfbba2c6d6f8d0e04bd5f999866bef1886d0342b17c3af28a"));
 
         // Tango addresses start with 'T'
@@ -172,7 +172,7 @@ public:
         pchMessageStart[2] = 0x32;
         pchMessageStart[3] = 0xbc;
         vAlertPubKey = ParseHex("041b2b4c86273359acac3522471911ed2b303eaab65e8a1de01c06e89f2eab1e55234a4b504f3ce20c6f661f007d0ca15623b4358d9855c7c8ba793a24fa315e22");
-        nDefaultPort = 19500;
+        nDefaultPort = 18484;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
@@ -259,7 +259,7 @@ public:
         genesis.nNonce = 20542300;
 
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 29500;
+        nDefaultPort = 28484;
        // assert(hashGenesisBlock == uint256("0x229874aa8a92df3347600978e226ba57bc994b9fa291ea50519afafca2d50ed3"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.

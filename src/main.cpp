@@ -77,7 +77,7 @@ bool fCheckBlockIndex = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
 
-unsigned int nStakeMinAge = 60 * 60;
+unsigned int nStakeMinAge = 60;
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in utngo) are considered zero fee (for relaying and mining)
@@ -1624,7 +1624,7 @@ int64_t GetBlockValue(int nHeight)
     }
 
     if (nHeight < Params().LAST_POW_BLOCK())
-        nSubsidy = 25000 * COIN;
+        nSubsidy = 50000 * COIN;
     else if (nHeight <= 50000)
         nSubsidy = 10 * COIN;
     else if (nHeight > 50000 && nHeight <= 100000)

@@ -203,10 +203,10 @@ QT_TRANSLATE_NOOP("tango-core", ""
 QT_TRANSLATE_NOOP("tango-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("tango-core", "(9500 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("tango-core", "(8484 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("tango-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("tango-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("tango-core", "(must be 9500 for mainnet)"),
+QT_TRANSLATE_NOOP("tango-core", "(must be 8484 for mainnet)"),
 QT_TRANSLATE_NOOP("tango-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("tango-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("tango-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
