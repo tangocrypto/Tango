@@ -5,7 +5,7 @@
 #
 
 #### Block times: - *2 minutes* 
-#### Maximum supply: - *100,000,000 (5 million) TNGO*
+#### Maximum supply: - *100,000,000 (100 million) TNGO*
 #### Consensus mechanism: - *Proof-of-Stake (80% masternodes, 20% stakers)*
 #### Algorithm: - *Quark-hash* 
 #### Masternode collateral - *10,000 TNGO*  
