@@ -791,7 +791,7 @@
                           </font>
                          </property>
                          <property name="text">
-                          <string notr="true">&lt;a href=&quot;https://blastexchange.com/&quot;&gt;https://blastexchange.com/&lt;/a&gt;</string>
+                          <string notr="true">&lt;a href=&quot;https://www.enmanet.com/market/BTC-TNGO&quot;&gt;https://www.enmanet.com/market/BTC-TNGO&lt;/a&gt;</string>
                          </property>
                          <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
