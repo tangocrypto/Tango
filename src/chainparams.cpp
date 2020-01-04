@@ -42,13 +42,14 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x0000096996809eb53677504436a9ff060798c13e2b00229fb2a456c57c17c140"));
-	
+    (0, uint256("0x0000096996809eb53677504436a9ff060798c13e2b00229fb2a456c57c17c140"))
+    (199800, uint256("0x948cacc0bc26cdcf7777aebf9467c72b272942bec40ce84b9a35c23fd17c478a"));
+
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1553091816, // * UNIX timestamp of last checkpoint block
-    0,          // * total number of transactions between genesis and last checkpoint
+    199800,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -90,7 +91,7 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 2 * 60; 
+        nTargetTimespan = 2 * 60;
         nTargetSpacing = 1 * 60;  // Tango: 1 minute blocks during POW (block 1-200)
         nMaturity = 5; // 6 block maturity (+1 elsewhere)
         nMasternodeCountDrift = 20;
@@ -145,7 +146,7 @@ public:
         nPoolMaxTransactions = 3;
         strSporkKey = "04cc17389379a0e323f53ea504d38cd71f43dc22f597805fed33a51b05ced1a3ae0db84089985f351b3737721736a82f58c8bd529f79c8ffe57e922bda792146ab";
         strMasternodePoolDummyAddress = "TSJVWUkt6HtSCY2SaJ2akeyJUg8bg1hW3S";
-        nStartMasternodePayments = 4070908800; 
+        nStartMasternodePayments = 4070908800;
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
     }
